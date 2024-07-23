@@ -1,0 +1,18 @@
+<div class="container">
+    <div class="mb-3">
+        <div class="form-floating content">
+            <textarea class="form-control" [(ngModel)]="textAreaData" placeholder="Leave a comment here"
+                      id="floatingTextarea2" style="height: 100px"></textarea>
+            <label for="floatingTextarea2">Enter text which you want to send to server in encrypted form</label>
+        </div>
+    </div>
+    <div class="mb-3">
+        <button type="button" (click)="sendData()" class="btn btn-primary">Submit</button>
+    </div>
+    <div class="alert alert-primary" role="alert" *ngIf="serverResponse">
+        {{serverResponse}}
+    </div>
+    <div class="alert alert-danger" role="alert" *ngIf="serverErrorResponse">
+        {{serverErrorResponse}}
+      </div>
+</div>
